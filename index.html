@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			html, body {
+			height: 100%;
+			margin: 0;
+			font-family: 'Open Sans', sans-serif;
+			}
+		</style>
+		<meta charset="utf-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> </script>
+		<script src="vendors/jquery.easings.min.js"></script>
+		<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+		<script type="text/javascript" src="jquery.fullPage.js"></script>
+		<script src="js/portfolio.js"></script>
+		<script src="basic-jquery-slider-master/bjqs.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			     $('#fullpage').fullpage({
+			          verticalCentered: true,
+			        resize : true,
+			        slidesColor : [],
+			        anchors:[],
+			        scrollingSpeed: 450,
+			        easing: 'linear',
+			        menu: false,
+			        fixedElements: '.social_media, #resume_top,',
+			        navigation: true,
+			        navigationPosition: 'right',
+			        navigationTooltips: ['Nicholas Bechtold', 'Gallery', 'Contact'],
+			        slidesNavigation: true,
+			        slidesNavPosition: 'bottom',
+			        loopBottom: false,
+			        loopTop: false,
+			        loopHorizontal: true,
+			        autoScrolling: true,
+			        scrollOverflow: false,
+			        css3: false,
+			        paddingTop: 0,
+			        paddingBottom: 0,
+			        fixedElements: '#skip_to_work',
+			        normalScrollElements: '.popup, .popup_content, .proposal_popup, .popup_background, .gallery_popup_left, .gallery_popup_right',
+			        keyboardScrolling: true,
+			        touchSensitivity: 5,
+			        continuousVertical: false,
+			        animateAnchor: true,
+			
+			        afterLoad: function(anchorLink, index){
+			            if (index == 1) {
+			            	$('#branding').css('color','#ecf0f1');
+			            	$('.email_link').css('color','#ecf0f1');
+			            }
+			            
+			            if (index == 2 || index == 3) {
+			            	$('#branding').css('color','#464646');
+			            	$('.email_link ').css('color','#464646');
+			            }
+			        }
+			     });
+			     
+			    
+			        
+			});
+			    
+		</script>
+		<!-- Include the basic styles -->
+		<link href="css/styles.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link type="text/css" rel="Stylesheet" href="basic-jquery-slider-master/bjqs.css" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+		<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+		
+		<title>Nicholas Bechtold Portfolio</title>
+	</head>
+	<body>
+		<div id="fullpage">
+			<div id="branding">
+				Resume <i class="fa fa-file-pdf-o" id="resume_icon"></i>
+				<i class="fa fa-linkedin-square fa-lg" id="linked_in_icon"></i>
+				<a href="mailto:neb001@lvc.edu" class="email_link">neb001@lvc.edu</a>
+			</div>
+			<div class="section" id="section1">
+				<div id="titleBox">
+					<b><span class="name">Nicholas Bechtold</span></b><br/>
+					<span class="developer">Digital Developer</span><br/>
+					<div>
+						<span class="title_link" id="work" onclick="$.fn.fullpage.moveTo(2);">Work</span> <span class="title_link" id="contact_link" onclick="$.fn.fullpage.moveTo(3);">Contact</span> <span class="title_link resume">Resume</span>
+					</div>
+				</div>
+				<img src="img/down.png" onclick="$.fn.fullpage.moveTo(2);" id="down"/>
+			</div>
+			<div class="section" id="section2">
+				<div id="galleryLeft">
+					<div class="leftHolder">
+						<div id="left_beach_filters" class="leftItem left_item_active">
+							Beach Filters
+							<img src="img/bf1.jpg"/>
+						</div>
+					</div>
+					<div class="leftHolder">
+						<div id="left_radiate" class="leftItem">
+							Radiate (WIP)
+							<img src="img/rlogoleft.jpg"/>
+						</div>
+					</div>
+					<div class="leftHolder">
+						<div id="left_ahdc" class="leftItem">
+							AHDC Vets
+							<img src="img/ahdc1.jpg"/>
+						</div>
+					</div>
+					<div class="leftHolder">
+						<div id="left_restaurantstore" class="leftItem">
+							RestaurantStore
+							<img src="img/rs1.jpg"/>
+						</div>
+					</div>
+					<!-- <div class="leftHolder">
+						<div id="left_leauge_of_death" class="leftItem">
+						    League of Death
+						    <img src="img/nav5.png"/>
+						   </div>
+						</div> -->
+				</div>
+				<div id="galleryContainer">
+					<div class="popup_background"></div>
+					<div id="beach_filters_container" class="activeGalleryContainer mobileContainer">
+						<div id="galleryTopHolder">
+							<img class="gallery_photo beach_filters_display1" id="beach_filters_display1" src="img/bf1.jpg">
+							<img class="gallery_photo beach_filters_display2" id="beach_filters_display2" src="img/bf2.jpg">
+							<img class="gallery_photo beach_filters_display3" id="beach_filters_display3" src="img/bf3.jpg">
+							<img class="gallery_photo beach_filters_display4" id="beach_filters_display4" src="img/bf4.jpg">
+							<div id="gallery_thumbs">
+								<img class="beach_filters_gallery_thumb_photo active effect2" src="img/bf1.jpg" id="1">
+								<img class="beach_filters_gallery_thumb_photo effect2" src="img/bf2.jpg" id="2">
+								<img class="beach_filters_gallery_thumb_photo effect2" src="img/bf3.jpg" id="3">
+								<img class="beach_filters_gallery_thumb_photo effect2" src="img/bf4.jpg" id="4">
+							</div>
+						</div>
+						<div id="galleryBottomHolder">
+							<span class="gallery_title beach_filters_display1">
+								Beach Filters Redesign <a href="http://www.beachfilters.com" class="live_demo beach_filters_display1"  target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption beach_filters_display1"> 
+								The Beach Filters redesign was the first project that I was given full development responisibilities during my time at Pipeline Interactive. I was tasked with building a WordPress website using WooCommerce to categorize and display all of Beach's products. The site is layed out in categories, subcategories and individual product pages with corresponding product tables. I created custom templates and functions using <b>PHP</b>, <b>jQuery</b>, <b>HTML5</b>, and <b>CSS3</b>.
+							</span>
+							<span class="gallery_title beach_filters_display2" >
+								Beach Filters - Categories <a href="http://www.beachfilters.com/compressed-air-filters/" class="live_demo beach_filters_display2"  target="_blank">Live Site</a></span>
+							<span class="gallery_caption beach_filters_display2">
+								The architecture of this site involved using the default category and product functions of WooCommerce. By writing custom WP Queries and shortcodes I created four main product categories featured in the main navigation. Each product category then has multiple subcategories.
+							</span>
+							<span class="gallery_title beach_filters_display3">
+								Beach Filters - Subategories <a href="http://www.beachfilters.com/product-details/compressed-air-filters/specialty-filters/" class="live_demo beach_filters_display3"  target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption beach_filters_display3">Each subcategory contained indiviudal products. Using Wordpress's built in taxonmies I queried the individual products per subcategory, sorted them based on the client's requirements, and rendered a product attributes table with the default WooCommerce product attributes.</span>
+							<span class="gallery_title beach_filters_display4">
+								Beach Filters - Product Search <a href="http://www.beachfilters.com" class="live_demo beach_filters_display4"  target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption beach_filters_display4">
+								Every page of Beach Filters has a form to search the product inventory based on a dynamic dropdown of attributes relating to individual product categories. Specific search options are displayed per each category using <b>jQuery</b>. The client desired specific products to show in multiple search scenarios. Using <b>PHP</b> I wrote my own search algorithm to display the client's desired results.
+							</span>
+						</div>
+					</div>
+					<!--close beach_filters_container-->
+					<div id="ahdc_container" class="mobileContainer">
+						<div id="galleryTopHolder">
+							<img class="gallery_photo ahdc_display1" id="ahdc_display1" src="img/ahdc1.jpg">
+							<img class="gallery_photo ahdc_display2" id="ahdc_display2" src="img/ahdc2.jpg">	
+							<img class="gallery_photo ahdc_display3" id="ahdc_display3" src="img/ahdc3.jpg">
+							<img class="gallery_photo ahdc_display4" id="ahdc_display3" src="img/ahdc4.jpg">
+							<div id="gallery_thumbs">
+								<img class="ahdc_gallery_thumb_photo active effect2" src="img/ahdc1.jpg" id="1">
+								<img class="ahdc_gallery_thumb_photo effect2" src="img/ahdc2.jpg" id="2">
+								<img class="ahdc_gallery_thumb_photo effect2" src="img/ahdc3.jpg" id="3">  
+								<img class="ahdc_gallery_thumb_photo effect2" src="img/ahdc4.jpg" id="4">                  
+							</div>
+						</div>
+						<div id="galleryBottomHolder">
+							<span class="gallery_title ahdc_display1">
+								AHDC Vets Redesign <a href="http://www.ahdcvets.com" class="live_demo ahdc_display1" target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption ahdc_display1">
+								The AHDC Vets redesign was another large project I was involved with at Pipeline Interactive. This project is a multisite WordPress install with a base theme and seven child sites with customized skins. I was involved in the creation of various features, templates, and styles.
+							</span>
+							<span class="gallery_title ahdc_display2" >
+								AHDC Vets - Homepage <a href="http://www.ahdcvets.com" class="live_demo ahdc_display2" target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption ahdc_display2">
+								I was responsible for most of the homepage features. The first was to create a shortcode that displays all of the 'doctor' custom post types at the top. I also imported all of AHDC's existing blog content to display their most recent post with lead in text. Last, I used the <b>Facebook API</b> to display and link to their most recent Facebook post.
+							</span>
+							<span class="gallery_title ahdc_display3">
+								AHDC Vets - Forms <a href="http://www.ahdcvets.com/contact-us/" class="live_demo ahdc_display3" target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption ahdc_display3">
+								A major part of my responsibilities with AHDC was form creation and styling. This included a basic contact us form pictured above as well as <a href="http://www.ahdcvets.com/new-patient-registration-form/">patient</a> and <a href="http://www.ahdcvets.com/new-client-registration-form-2/">client</a> registration forms which stored the results in a database and emailed the client new form submission notifications. 
+							</span>
+							<span class="gallery_title ahdc_display4"> 
+								AHDC Vets - Templates <a href="http://www.ahdcvets.com/new-clients/" class="live_demo ahdc_display3" target="_blank">Live Site</a>
+							</span>
+							<span class="gallery_caption ahdc_display4">
+								I created multiple template files and pages for AHDC including the one pictured above. The templates were created following the WordPress guidelines and pages were created in the admin using the WYSIWYG editor and the Pagely MultiEdit plugin.
+							</span>
+						</div>
+					</div>
+					<!--close ahdc_container-->
+					<div id="restaurantstore_container" class="mobileContainer">
+						<div id="galleryTopHolder">
+							<img class="gallery_photo restaurantstore_display1" id="restaurantstore_display1" src="img/rs1.jpg">
+							<img class="gallery_photo restaurantstore_display2" id="restaurantstore_display2" src="img/rs2.jpg">
+							<div id="gallery_thumbs">
+								<img class="restaurantstore_gallery_thumb_photo active effect2" src="img/rs1.jpg" id="1">
+								<img class="restaurantstore_gallery_thumb_photo effect2" src="img/rs2.jpg" id="2">
+							</div>
+						</div>
+						<div id="galleryBottomHolder">
+							<span class="gallery_title restaurantstore_display1">
+								The Restaurant Store <a href="https://www.therestaurantstore.com/" class="live_demo restaurantstore_display1" target="_blank">Live Site</a> 
+							</span>
+							<span class="gallery_caption restaurantstore_display1">
+								The Restaurant Store is under the umbrella company Clark Associates which includes Webstaurantstore.com. The Restaurant Store is a brick and mortar store with an online storefront. As a development intern I created ecommerce features using <b>PHP</b>, <b>SQLServer</b>, and <b>jQuery</b>. Box 1 above shows the product variations feature I created using my own database schema and PHP classes. Products that have multiple colors, sizes and other variations have a list of every variation on their product page. Box 2 is surrounding a blurb I built that displays on products that are not in the warehouse inventory, but can be special ordered.
+							</span>
+							<span class="gallery_title restaurantstore_display2" >
+							The Restaurant Store - Customer Images <a href="https://www.therestaurantstore.com/" class="live_demo restaurantstore_display2" target="_blank">Live Site</a> 
+							</span>
+							<span class="gallery_caption restaurantstore_display2">
+								Therestaurntstore.com and Webstaurantstore.com shared some database tables which included customer-uploaded product images that were attached to customer comments. The box above shows all of the customer product images as well as the default product images in a gallery. When a photo is clicked, it populates the main product image space. This was created with <b>PHP</b> and <b>jQuery</b>.
+							</span>
+						</div>
+					</div>
+					<!--close restaurantstore_container-->
+					<div id="radiate_container" class="mobileContainer">
+						<div id="radiate_popup" class="popup">
+							<div class="popup_content">
+								<div class="popup_container">
+									<iframe src="https://docs.google.com/document/d/1Eli3N3wO1T_PMhpQtd6xPtsm9MY7YEgOAt1AkD51_wI/pub?embedded=true" width="100%" height="95%"></iframe>
+								</div>
+							</div>
+						<div class="gallery_close"><img src="img/closebox.png"></div>
+						</div>
+						<div id="galleryTopHolder">
+							<!--close radiate-1-->
+							<!-- <iframe src="https://docs.google.com/document/d/1Eli3N3wO1T_PMhpQtd6xPtsm9MY7YEgOAt1AkD51_wI/pub?embedded=true" class="radiate_display1" id="radiate_display1" width="100%" height="95%"></iframe> -->
+							<img class="gallery_photo radiate_display1" id="radiate_display1" src="img/rlogo.png">
+							<img class="gallery_photo radiate_display2" id="radiate_display2" src="img/rd1.jpg">
+							<img class="gallery_photo radiate_display3" id="radiate_display3" src="img/rd2.jpg">
+							<img class="gallery_photo radiate_display4" id="radiate_display4" src="img/rd3.jpg">
+							<div id="gallery_thumbs">
+								<img class="radiate_gallery_thumb_photo active effect2" src="img/rlogo.png" id="1">
+								<img class="radiate_gallery_thumb_photo effect2" src="img/rd1.jpg" id="2">
+								<img class="radiate_gallery_thumb_photo effect2" src="img/rd2.jpg" id="3">
+								<img class="radiate_gallery_thumb_photo effect2" src="img/rd3.jpg" id="4">
+							</div>
+						</div>
+						<div id="galleryBottomHolder">
+							<span class="gallery_title radiate_display1">
+								Radiate (WIP) <a id="radiate_display1_more" class="live_demo">Read Project Plan</a>
+							</span>
+							<span class="gallery_caption radiate_display1">
+								Radiate is a personal project / startup of mine that has been turned into a class project consisting of 7 members where I am <b>project manager</b>. Radiate is an online platform for undiscovered designers and musicians to host their work and gain recognition from a community interested in new talent. It began with my roommate and I in 2014 and is still a work in progress. As project manager I collaboratively wrote the project plan, write weekly OKRs, installed <b>GIT</b> and a dev environemt on a virtual server, and oversee the development and marketing activities. The website is being built using WordPress and WooCommerce. We are set to launch a kickstarter campaign in the middle of April 2016.</span>
+							<span class="gallery_title radiate_display2" >Radiate - First Website Draft</span>
+							<span class="gallery_caption radiate_display2">
+								Since the project is now for a class, the design and development is a very iterative process. This is the first draft of our website that focuses on information architecture and layout. The homepage above lists the top tracks and shirts from our community as well as more information about the company. I was responsible for building the homepage as well as assisting in designing and developing the rest of the site. 
+							</span>
+							<span class="gallery_title radiate_display3">Radiate - Music Player</span>
+							<span class="gallery_caption radiate_display3">
+								Radiate features new musicians every month. The above screenshot is the music player page where users will find the featured band as well as every other band on our site. The music player will stream music with advertisements and have the ability to sell music through the site. 
+							</span>
+							<span class="gallery_title radiate_display4">Radiate - Store Front</span>
+							<span class="gallery_caption radiate_display4">
+								Similar to the music player, the shirt page features a new designer every month via their submitted tshirt. Users will have the ability to purchase the featured designer's shirt as well as other artwork. This page lists every shirt in our inventory.
+							</span>
+						</div>
+					</div>
+					<!--close radiate_container-->
+				</div>
+				<!-- for mobile -->
+				<div id="mobileNav">
+					<div class="leftHolder">
+						<div id="left_beach_filters_mobile" class="leftItem left_item_active">
+							<img src="img/bf1.jpg"/>
+							Beach Filters
+						</div>
+					</div>
+					<div class="leftHolder">
+						<div id="left_radiate_mobile" class="leftItem">
+							<img src="img/rlogoleft.jpg"/>
+							Radiate (WIP)
+						</div>
+					</div>
+					<div class="leftHolder">
+						<div id="left_ahdc_mobile" class="leftItem">
+							<img src="img/ahdc1.jpg"/>
+							AHDC Vets
+						</div>
+					</div>
+					<div class="leftHolder">
+						<div id="left_restaurantstore_mobile" class="leftItem">
+							<img src="img/rs1.jpg"/>
+							RestaurantStore
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="section" id="section3" style="background-color:#F8F8F8;">
+				<div id="info">
+					<h1>Nicholas Bechtold</h1>
+					<br/>
+					<span><a href="mailto:neb001@lvc.edu">neb001@lvc.edu</a></span><br/>
+					<span>(717) 383-2791</span><br/>
+					<a href="#" class="resume">Resume</span><br/>
+					<a href="img/Bechtold_Resume.pdf" download>(Download Resume)</a><br/>
+				</div>
+				<div id="resume_popup" class="popup">
+					<div class="popup_content">
+						<div class="popup_container">
+							<embed src="img/Bechtold_Resume.pdf" width=100% height=100%>
+						</div>
+					</div>
+					<div class="gallery_close"><img src="img/closebox.png"></div>
+				</div>
+				<div class="loader"></div>
+			</div>
+		</div>
+	</body>
+</html>
